@@ -46,6 +46,15 @@ Once Docker is installed, navigate to the root directory of the project and run 
 ```
     php artisan db:seed
 ```
+*** If backend not start because no vendor follow this step ***
+1. Access the Backend Container:
+```
+    docker exec -it backend-svc bash
+```
+2. Install Composer:
+```
+    composer install
+```
 ## Testing
 
 - For frontend testing, access it on port 8080 or go to [frontend test](http://localhost:8080).
