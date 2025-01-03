@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Technology",
+      "id": 101
+    },
+    {
+      "name": "Healthcare",
+      "id": 102
+    },
+    {
+      "name": "Finance",
+      "id": 103
+    },
+    {
+      "name": "Education",
+      "id": 104
+    },
+    {
+      "name": "Environment",
+      "id": 105
+    },
+    {
+      "name": "Retail",
+      "id": 106
+    },
+    {
+      "name": "Entertainment",
+      "id": 107
+    },
+    {
+      "name": "Manufacturing",
+      "id": 108
+    },
+    {
+      "name": "Food & Beverage",
+      "id": 109
+    },
+    {
+      "name": "Travel & Tourism",
+      "id": 110
+    }
+  ]
+  

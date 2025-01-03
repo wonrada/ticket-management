@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Express Delivery",
+      "id": 3001
+    },
+    {
+      "name": "Cargo Shipping",
+      "id": 3002
+    },
+    {
+      "name": "Passenger Transport",
+      "id": 3003
+    },
+    {
+      "name": "Freight Forwarding",
+      "id": 3004
+    },
+    {
+      "name": "Logistics Solutions",
+      "id": 3005
+    },
+    {
+      "name": "Global Distribution",
+      "id": 3006
+    },
+    {
+      "name": "Container Services",
+      "id": 3007
+    },
+    {
+      "name": "Bulk Shipping",
+      "id": 3008
+    },
+    {
+      "name": "International Routes",
+      "id": 3009
+    },
+    {
+      "name": "Port Operations",
+      "id": 3010
+    }
+  ]
+  
