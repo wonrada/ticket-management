@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="ticket in ticketData" :key="ticket.id">
-                                <td class="d-flex justify-content-center align-items-center">
+                                <td class="d-flex justify-content-center align-self-center" style="height:100%;">
                                     <div class="pe-1">
                                         <button @click="showTicket(ticket)" class="btn btn-primary">
                                             <i class="fas fa-eye"></i>

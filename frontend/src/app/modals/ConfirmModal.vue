@@ -59,6 +59,7 @@ const onNo = () => {
   // Emit true to the parent component when the Yes button is clicked
   emit('modalClosed', false)
   closeModal() // Optionally close the modal after sending the event
+  if(props){}
 }
 
 // Expose openModal to parent component
