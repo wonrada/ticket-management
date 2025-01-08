@@ -120,7 +120,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import PaginationComponent from '../../app/components/PaginationComponent.vue';
-import { getTickets } from '../../app/services/ticket.service';
+import { getTickets,deleteTicket } from '../../app/services/ticket.service';
 import { useRouter } from 'vue-router'; // Import useRouter hook to navigate
 import type { getTicketResponse, Ticket } from '../../app/models/ticketResponse.model';
 import type { getTicketRequest } from '../../app/models/ticketRequest.model';
@@ -138,7 +138,7 @@ var params: getTicketRequest = {
     byDescending: false,
 };
 const ticketData = ref<Ticket[]>([]); // Use ref for reactivity
-let ticketId = '';
+const ticketId = ref<string>('');
 
 const totalPages = ref(0); // Initialize totalPages as a reactive reference with 0
 let currentPage = ref(1); // Declare currentPage as a reactive reference
@@ -166,13 +166,13 @@ const configModal = ref({
 })
 
 const openModal = (id: string) => {
-    ticketId = id;
+    ticketId.value = id;
     modalRef.value?.openModal()
 }
 
 const handleModalClosed = (value: boolean) => {
     if (value) {
-        deleteTicket(ticketId);
+        delTicket();
     }
 }
 
@@ -211,18 +211,17 @@ async function getTicket() {
         const response: getTicketResponse = await getTickets(params);
         ticketData.value = response.data; // Correctly assign data to ticketData
         totalPages.value = response.totalPage ?? 0; // Ensure totalPages is always a valid number
-        console.log(response.totalPage);
     } catch (error) {
         console.error('Failed to fetch data', error);
     }
 }
 
-async function deleteTicket(ticketId: string) {
-
+async function delTicket(){
     try {
-        const response = await deleteTicket(ticketId);
-        console.log(response);
-
+        const response = await deleteTicket(ticketId.value);
+        if(response.success){
+            getTicket();
+        }
     } catch (error) {
         console.error('Failed to fetch data', error);
     }

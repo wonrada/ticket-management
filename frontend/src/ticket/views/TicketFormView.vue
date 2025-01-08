@@ -135,7 +135,7 @@ import type { TicketRequest } from '../../app/models/ticketRequest.model';
 import { createTicket, getOneTickets, updateTicket } from '../../app/services/ticket.service';
 import type { TicketResponse } from '../../app/models/response.model';
 import ConfirmModal from '../../app/modals/ConfirmModal.vue';
-import { useRoute } from 'vue-router';
+import { useRoute,useRouter } from 'vue-router';
 import type { TicketData } from '../../app/models/ticketResponse.model';
 
 interface MockupDataModel {
@@ -165,6 +165,7 @@ const request = ref<TicketRequest>({
     category: ""
 });
 const route = useRoute();
+const router = useRouter();
 const ticketId = route.params.ticketId;
 
 const message = ref("")
@@ -233,7 +234,9 @@ async function onSave() {
     if (ticketId) {
         try {
             const response: TicketResponse = await updateTicket(ticketId.toString(),request.value);
-            console.log(response.data);
+            if(response.success){
+                router.push({ path: `/` });
+            }
         } catch (error) {
             console.error('Failed to fetch data', error);
         }
@@ -242,7 +245,6 @@ async function onSave() {
     else {
         try {
             const response: TicketResponse = await createTicket(request.value);
-            console.log(response.data);
         } catch (error) {
             console.error('Failed to fetch data', error);
         }

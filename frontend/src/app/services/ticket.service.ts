@@ -4,8 +4,9 @@ import type { getTicketResponse } from '../models/ticketResponse.model';
 import type { getTicketRequest, TicketRequest } from '../models/ticketRequest.model';
 import type { TicketResponse } from '../models/response.model';
 
+const currentHostname = window.location.hostname;
 const apiClient = axios.create({
-  baseURL: '/api/api', // Replace with your API base URL
+  baseURL: 'http://'+currentHostname+':8000/api', // Replace with your API base URL
   headers: {
     'Content-Type': 'application/json',
   },
