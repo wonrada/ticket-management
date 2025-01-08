@@ -245,6 +245,7 @@ async function onSave() {
     else {
         try {
             const response: TicketResponse = await createTicket(request.value);
+            if(response.success){}
         } catch (error) {
             console.error('Failed to fetch data', error);
         }
