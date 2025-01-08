@@ -37,8 +37,6 @@ const isVisible = ref(false)
 
 const openModal = () => {
   isVisible.value = true
-  console.log(props);
-  
 }
 
 const closeModal = () => {
